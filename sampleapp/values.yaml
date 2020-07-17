@@ -4,11 +4,11 @@
 
 replicaCount: 1
 
-image:
-  repository: nginx
+image: spinclusterregistry.azurecr.io/hello-world:1.0.0
+  #registry: spinclusterregistry.azurecr.io
   pullPolicy: Always
   # Overrides the image tag whose default is the chart version.
-  tag: ""
+  #tag: ""
 
 imagePullSecrets: []
 nameOverride: ""
