@@ -39,12 +39,12 @@ spec:
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /
-              port: http
+              path: /hello/ramesh
+              port: 9080
           readinessProbe:
             httpGet:
-              path: /
-              port: http
+              path: /hello/ramesh
+              port: 9080
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
