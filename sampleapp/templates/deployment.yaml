@@ -41,10 +41,14 @@ spec:
             httpGet:
               path: /hello/ramesh
               port: 9080
+            initialDelaySeconds: 60
+            periodsSeconds: 30
           readinessProbe:
             httpGet:
               path: /hello/ramesh
               port: 9080
+            initialDelaySeconds: 60
+            periodsSeconds: 30            
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
