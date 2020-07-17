@@ -6,7 +6,7 @@ replicaCount: 1
 
 image: spinclusterregistry.azurecr.io/hello-world:1.0.0
   #registry: spinclusterregistry.azurecr.io
-  pullPolicy: Always
+imagePullPolicy: Always
   # Overrides the image tag whose default is the chart version.
   #tag: ""
 
