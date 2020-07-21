@@ -5,7 +5,7 @@
 replicaCount: 1
   
 image:
-  repository: "spinclusterregistry.azurecr.io/demoapp"
+  repository: "spinclusterregistry.azurecr.io/demojob"
   tag: ""
   pullPolicy: Always
 
