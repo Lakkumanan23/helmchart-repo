@@ -6,7 +6,7 @@ replicaCount: 1
   
 image:
   repository: "spinclusterregistry.azurecr.io/hello-docker"
-  tag: "1.0.0"
+  tag: ""
   pullPolicy: Always
 
 imagePullSecrets:
