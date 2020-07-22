@@ -1,6 +1,6 @@
 replicaCount: 2
 
 imagePullSecrets:
-  - name: acrsecretdev
+  - name: acrsecretprod
 nameOverride: ""
 fullnameOverride: ""
