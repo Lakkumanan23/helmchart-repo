@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "sampleapp.fullname" . }}
+  name: {{ include "samplechart.fullname" . }}
   labels:
-    {{- include "sampleapp.labels" . | nindent 4 }}
+    {{- include "samplechart.labels" . | nindent 4 }}
 spec:
 {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
 {{- end }}
   selector:
     matchLabels:
-      {{- include "sampleapp.selectorLabels" . | nindent 6 }}
+      {{- include "samplechart.selectorLabels" . | nindent 6 }}
   template:
     metadata:
     {{- with .Values.podAnnotations }}
@@ -18,13 +18,13 @@ spec:
         {{- toYaml . | nindent 8 }}
     {{- end }}
       labels:
-        {{- include "sampleapp.selectorLabels" . | nindent 8 }}
+        {{- include "samplechart.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "sampleapp.serviceAccountName" . }}
+      serviceAccountName: {{ include "samplechart.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -35,7 +35,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 9080
+              containerPort: {{ .Values.containerPort}}
               protocol: TCP
           livenessProbe:
             httpGet:
